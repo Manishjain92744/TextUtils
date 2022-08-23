@@ -40,7 +40,7 @@ export default function TextForm(props) {
    //  SetText("new text"); // correct way to change state
   return (
     <> 
-    <div className="container" style={{color:props.mode==='dark'?'white':'#042743'}} >
+    <div className="container" style={{color:props.mode==='dark'?'white':'#042743'}}>
          <h1> {props.heading} </h1>
         <div className="mb-3">  
           <textarea className="form-control" value={text} style={{backgroundColor:props.mode==='light'?'white':'grey'}}onChange={handleOnChange} id="my-box" rows="8"></textarea>

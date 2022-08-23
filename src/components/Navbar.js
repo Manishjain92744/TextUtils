@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 export default function Navbar(props) {
   return (
@@ -7,9 +8,9 @@ export default function Navbar(props) {
       className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}
     >
       <div className="container-fluid">
-        <a className="navbar-brand" href="/">
+        <Link className="navbar-brand" to="/">
           {props.title}
-        </a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -25,22 +26,23 @@ export default function Navbar(props) {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item active">
-              <a className="nav-link" href="/">
+              <Link className="nav-link" to="/">
                 {" "}
                 Home <span className="sr-only">(current)</span>
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/">
+              <Link className="nav-link" to="/About">
                 {props.aboutText}
-              </a>
+              </Link>
             </li>
           </ul>
           {/* <form className="form-inline my-2 my-lg-0">
         <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
         <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
       </form> */}
-          <div className={`form-check form-switch text-${props.mode==='light'?'dark':'light'}`}>
+  
+      <div className={`form-check form-switch text-${props.mode==='light'?'dark':'light'}`}>
             <input
               className="form-check-input"
               type="checkbox"
@@ -50,10 +52,11 @@ export default function Navbar(props) {
             />
             <label className="form-check-label" htmlFor="flexSwitchCheckDefault">
               {" "}
-              Enable DarkMode
+              Enable {props.mode=='light'?'Dark':'Light'}Mode
             </label>
           </div>
         </div>
+        
       </div>
     </nav>
   );
